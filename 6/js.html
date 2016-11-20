@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>js</title>
+  <style>
+  
+  </style>
+  
+  <script>
+   //
+  </script>
+  
+  <script>
+   //window.onload = function() {
+     
+   function maxmin(values){
+     var max = values[0];
+     var min = values[0];
+     for(var i = 0; i < values.length; i++){
+         if(values[i] < min){
+           min = values[i];
+         }
+         if(values[i] > max){
+           max = values[i];
+         }
+     }
+     return [max, min];
+   }
+   console.log(maxmin([1,3,5,7,9,11,295,297,299,300,298,296,12,10,8,6,4,2]));
+   
+   
+   //};
+  </script>
+
+</head>
+<body>
+
+</body>
+</html>
