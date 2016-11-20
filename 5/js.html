@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>js</title>
+  <style>
+  
+  </style>
+  
+  <script>
+   //
+  </script>
+  
+  <script>
+   //window.onload = function() {
+     
+   function min2(count,values){
+     var result = "";
+     var value1, value2, value3, min;
+     var values_arr = values.split(' ');
+     for(var i = 0; i < values_arr.length; i++){
+       if((i % 3 == 1)&&(count > 0)){
+         value1 = Number(values_arr[i-1]);
+         value2 = Number(values_arr[i]);
+         value3 = Number(values_arr[i+1]);
+         console.log(value1, value2, value3);
+         if(value1 < value2){
+           min = value1;
+         }else{
+           min = value2;
+         }
+         if(value3 < min){
+           min = value3;
+         }
+         count--;
+         if(result == ""){
+           result = +min;
+         }else{
+           result = result + " " + min;
+         }
+       }
+     }
+     return result;
+   }
+   console.log(min2(3,"7 3 5 15 20 40 300 550 137"));
+   
+   
+   //};
+  </script>
+
+</head>
+<body>
+
+</body>
+</html>
