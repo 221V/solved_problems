@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>js</title>
+  <style>
+  
+  </style>
+  
+  <script>
+   //
+  </script>
+  
+  <script>
+   //window.onload = function() {
+     
+   function round(values){
+     var result = "";
+     var for_round, rounded;
+     var values_arr = values.split(' ');
+     for(var i = 1; i < values_arr.length; i+=2){
+        for_round = Number(values_arr[i]) / Number(values_arr[i+1]);
+        if(for_round > 0){
+          rounded = Math.ceil(for_round);
+        }else{
+          rounded = Math.floor(for_round);
+        }
+        if(result == ""){
+          result = +rounded;
+        }else{
+          result = result + " " + rounded;
+        }
+     }
+     return result;
+   }
+   console.log(round("3 12 8 11 -3 400 5"));
+   
+   
+   //};
+  </script>
+
+</head>
+<body>
+
+</body>
+</html>
