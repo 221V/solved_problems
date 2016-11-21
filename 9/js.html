@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>js</title>
+  <style>
+  
+  </style>
+  
+  <script>
+   //
+  </script>
+  
+  <script>
+   //window.onload = function() {
+   
+   function vowel_count(count,values_list){
+     var vowels = ["a","o","u","i","e","y"];
+     var count;
+     var result = "";
+     for(var i=0;i<count;i++){
+       count = 0;
+       for(var j=0;j<values_list[i].length;j++){
+         if(values_list[i][j] == " "){}else if(vowels.indexOf(values_list[i][j]) != -1){
+           count++;
+         }
+       }
+       if(result == ""){
+         result = +count;
+       }else{
+         result = result + " " + count;
+       }
+     }
+     return result;
+   }
+   
+   console.log(vowel_count(4,["abracadabra", "pear tree", "o a kak ushakov lil vo kashu kakao", "my pyx"]));
+   
+   
+   
+   //};
+  </script>
+
+</head>
+<body>
+
+</body>
+</html>
