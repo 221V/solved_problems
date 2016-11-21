@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>js</title>
+  <style>
+  
+  </style>
+  
+  <script>
+   //
+  </script>
+  
+  <script>
+   //window.onload = function() {
+   
+   function toCelsius(count,fahrenheit_list){
+     var result = "";
+     var rounded;
+     for(var i=0;i<count;i++){
+       var for_round = (5/9) * (fahrenheit_list[i] - 32);
+       if(result == ""){
+         result = +Math.round(for_round);
+       }else{
+         result = result + " " + Math.round(for_round);
+       }
+     }
+     return result;
+   }
+   
+   function toFahrenheit(count,celsius_list){
+     var result = "";
+     var rounded;
+     for(var i=0;i<count;i++){
+       var for_round = ((9/5) * celsius_list[i]) + 32;
+       if(result == ""){
+         result = +Math.round(for_round);
+       }else{
+         result = result + " " + Math.round(for_round);
+       }
+     }
+     return result;
+   }
+   
+   console.log(toCelsius(5,[495, 353, 168, -39, 22]));
+   //console.log(toFahrenheit(5,[257, 178, 76, -39, -6]));
+   
+   
+   //};
+  </script>
+
+</head>
+<body>
+
+</body>
+</html>
