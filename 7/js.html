@@ -20,15 +20,10 @@
      var values_arr = values.split(' ');
      for(var i = 1; i < values_arr.length; i+=2){
         for_round = Number(values_arr[i]) / Number(values_arr[i+1]);
-        if(for_round > 0){
-          rounded = Math.ceil(for_round);
-        }else{
-          rounded = Math.floor(for_round);
-        }
         if(result == ""){
-          result = +rounded;
+          result = +Math.round(for_round);
         }else{
-          result = result + " " + rounded;
+          result = result + " " + Math.round(for_round);
         }
      }
      return result;
