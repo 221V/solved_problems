@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>js</title>
+  <style>
+  
+  </style>
+  
+  <script>
+   //
+  </script>
+  
+  <script>
+   //window.onload = function() {
+     
+   function median3(count,values){
+     var result = "";
+     var value1, value2, value3, median;
+     var values_arr = values.split(' ');
+     for(var i = 0; i < values_arr.length; i++){
+       if((i % 3 == 1)&&(count > 0)){
+         value1 = Number(values_arr[i-1]);
+         value2 = Number(values_arr[i]);
+         value3 = Number(values_arr[i+1]);
+         if(((value1 < value2)&&(value1 > value3))||((value1 > value2)&&(value1 < value3))){
+           median = value1;
+         }else if(((value2 < value1)&&(value2 > value3))||((value2 > value1)&&(value2 < value3))){
+           median = value2;
+         }else if(((value3 < value1)&&(value3 > value2))||((value3 > value1)&&(value3 < value2))){
+           median = value3;
+         }else{
+           median = "null";
+         }
+         count--;
+         if(result == ""){
+           result = +median;
+         }else{
+           result = result + " " + median;
+         }
+       }
+     }
+     return result;
+   }
+   console.log(median3(3,"7 3 5 15 20 40 300 550 137"));
+   
+   
+   //};
+  </script>
+
+</head>
+<body>
+
+</body>
+</html>
