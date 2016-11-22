@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>js</title>
+  <style>
+  
+  </style>
+  
+  <script>
+   //
+  </script>
+  
+  <script>
+   //window.onload = function() {
+     
+   function bmIndex(count,values){
+     var result = "";
+     var value1, value2, value3, bm_index;
+     var values_arr = values.split(' ');
+     for(var i = 0; i < values_arr.length; i++){
+       if((i % 2 == 1)&&(count > 0)){
+         value1 = Number(values_arr[i-1]);
+         value2 = Number(values_arr[i]);
+         bm_index = Math.round((value1 / (value2 * value2))*10)/10;
+         if(bm_index < 18.5){
+           bm_index = "under";
+         }else if((bm_index < 25.0)&&(bm_index >= 18.5)){
+           bm_index = "normal";
+         }else if((bm_index < 30.0)&&(bm_index >= 25.0)){
+           bm_index = "over";
+         //}else if(bm_index >= 30.0){
+         }else{
+           bm_index = "fat";
+         }
+         count--;
+         if(result == ""){
+           result = bm_index;
+         }else{
+           result = result + " " + bm_index;
+         }
+       }
+     }
+     return result;
+   }
+   console.log(bmIndex(3,"80 1.73 55 1.58 49 1.91"));
+   
+   
+   //};
+  </script>
+
+</head>
+<body>
+
+</body>
+</html>
