@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>js</title>
+  <style>
+  
+  </style>
+  
+  <script>
+   //
+  </script>
+  
+  <script>
+   //window.onload = function() {
+     
+   function sum_digit(count,values){
+     var result = "";
+     var value1, value2, value3, digit_sum1, digit_sum2;
+     var values_arr = values.split(' ');
+     for(var i = 0; i < values_arr.length; i++){
+       if((i % 3 == 1)&&(count > 0)){
+         value1 = values_arr[i-1];
+         value2 = values_arr[i];
+         value3 = values_arr[i+1];
+         
+         digit_sum1 = (Number(value1) * Number(value2) + Number(value3)).toString();
+         digit_sum2 = 0;
+         for(var i=0;i<digit_sum1.length;i++){
+           digit_sum2 = digit_sum2 + +digit_sum1[i];
+         }
+         count--;
+         if(result == ""){
+           result = digit_sum2;
+         }else{
+           result = result + " " + digit_sum2;
+         }
+       }
+     }
+     return result;
+   }
+   console.log(sum_digit(3,"11 9 1 14 90 232 111 15 111"));
+   
+   
+   //};
+  </script>
+
+</head>
+<body>
+
+</body>
+</html>
