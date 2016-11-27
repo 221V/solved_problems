@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>js</title>
+  <style>
+  
+  </style>
+  
+  <script>
+   //
+  </script>
+  
+  <script>
+   //window.onload = function() {
+     
+   function d_roll(count,values){
+     var result = "";
+     var res1;
+     for(var i = 0; i < count; i++){
+         res1 = Math.floor(values[i] * 6) + 1;
+         if(result == ""){
+           result = +res1;
+         }else{
+           result = result + " " + res1;
+         }
+     }
+     return result;
+   }
+   console.log(d_roll(6,[0.59558786964, 0.861037873663, 0.385597702116, 0.246237673331, 0.808033385314, 0.0544673665427]));
+   
+   
+   //};
+  </script>
+
+</head>
+<body>
+
+</body>
+</html>
