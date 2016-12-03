@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>js</title>
+  <style>
+  
+  </style>
+  
+  <script>
+   //
+  </script>
+  
+  <script>
+   //window.onload = function() {
+     
+   function avg(count,values){
+     var result = "";
+     var value1, res1;
+     for(var i = 0; i < count; i++){
+       value1 = 0;
+       for(var j=0;j<values[i].length;j++){
+         value1 = value1 + values[i][j];
+       }
+       res1 = Math.round(value1 / values[i].length);
+       if(result == ""){
+         result = +res1;
+       }else{
+         result = result + " " + res1;
+       }
+     }
+     return result;
+   }
+   console.log(avg(3,[[2, 3, 7], [20, 10], [1]]));
+   
+   
+   //};
+  </script>
+
+</head>
+<body>
+
+</body>
+</html>
