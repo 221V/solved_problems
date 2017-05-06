@@ -7,8 +7,7 @@ min3(Count, Values) ->
 
 min3(_, [], Result) ->
   lists:reverse(Result);
-min3(Count, [ValueHead|ValuesTail], Result) ->
-  {Value1, Value2, Value3} = ValueHead,
+min3(Count, [{Value1, Value2, Value3}|ValuesTail], Result) ->
   ValueMin = mini3(Value1, Value2, Value3),
   min3(Count - 1, ValuesTail, [ValueMin|Result]).
 

@@ -7,10 +7,8 @@ median3(Count, Values) ->
 
 median3(_, [], Result) ->
   lists:reverse(Result);
-median3(Count, [ValueHead|ValuesTail], Result) ->
-  {Value1, Value2, Value3} = ValueHead,
-  ValueMedian = median_3(Value1, Value2, Value3),
-  median3(Count - 1, ValuesTail, [ValueMedian|Result]).
+median3(Count, [{Value1, Value2, Value3}|ValuesTail], Result) ->
+  median3(Count - 1, ValuesTail, [median_3(Value1, Value2, Value3)|Result]).
 
 median_3(A,B,C) when A < B, A > C; A > B, A < C ->
   A;

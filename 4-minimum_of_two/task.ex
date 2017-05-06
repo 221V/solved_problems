@@ -8,8 +8,7 @@ defmodule Task do
     Enum.reverse(result)
   end
 
-  defp min2(count, [head_value|tail_values], result) do
-    {value1, value2} = head_value
+  defp min2(count, [{value1, value2}|tail_values], result) do
     value3 = case value1 < value2 do
       true -> value1
       false -> value2

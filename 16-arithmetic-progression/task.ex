@@ -8,8 +8,7 @@ defmodule Task do
     Enum.reverse(result)
   end
 
-  defp ar_pr(count, [head_value|tail_values], result) do
-    {v1, v2, v3} = head_value
+  defp ar_pr(count, [{v1, v2, v3}|tail_values], result) do
     res1 = sum_pr(v3, v1, v2, 0)
     ar_pr(count - 1, tail_values, [Integer.to_string(res1)|result])
   end

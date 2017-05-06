@@ -8,10 +8,8 @@ defmodule Task do
     Enum.reverse(result)
   end
 
-  defp sum3(count, [head_value|tail_values], result) do
-    {value1, value2} = head_value
-    value3 = value1 + value2
-    sum3(count - 1, tail_values, [value3|result])
+  defp sum3(count, [{value1, value2}|tail_values], result) do
+    sum3(count - 1, tail_values, [value1 + value2|result])
   end
 
 end

@@ -8,8 +8,7 @@ defmodule Task do
     Enum.reverse(result)
   end
 
-  defp sum_digit(count, [head_value|tail_values], result) do
-    {value1, value2, value3} = head_value
+  defp sum_digit(count, [{value1, value2, value3}|tail_values], result) do
     res1 = Enum.sum(Integer.digits(value1 * value2 + value3))
     sum_digit(count - 1, tail_values, [res1|result])
   end

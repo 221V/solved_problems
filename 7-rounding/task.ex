@@ -8,8 +8,7 @@ defmodule Task do
     Enum.reverse(result)
   end
 
-  defp round(count, [head_value|tail_values], result) do
-    {value1, value2} = head_value
+  defp round(count, [{value1, value2}|tail_values], result) do
     round(count - 1, tail_values, [Kernel.round(value1 / value2)|result])
   end
 

@@ -7,8 +7,7 @@ sum_digit(Count, Values) ->
 
 sum_digit(_, [], Result) ->
   lists:reverse(Result);
-sum_digit(Count, [ValueHead|ValuesTail], Result) ->
-  {Value1, Value2, Value3} = ValueHead,
+sum_digit(Count, [{Value1, Value2, Value3}|ValuesTail], Result) ->
   Res1 = digit_sum(Value1 * Value2 + Value3, 10),
   sum_digit(Count - 1, ValuesTail, [Res1|Result]).
 

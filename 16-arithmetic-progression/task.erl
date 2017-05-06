@@ -7,8 +7,7 @@ ar_pr(Count, Values) ->
 
 ar_pr(_, [], Result) ->
   lists:reverse(Result);
-ar_pr(Count, [ValueHead|ValuesTail], Result) ->
-  {V1, V2, V3} = ValueHead,
+ar_pr(Count, [{V1, V2, V3}|ValuesTail], Result) ->
   Res1 = sum_pr(V3, V1, V2, 0),
   ar_pr(Count - 1, ValuesTail, [erlang:integer_to_binary(Res1)|Result]).
 

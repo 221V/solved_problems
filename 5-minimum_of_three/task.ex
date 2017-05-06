@@ -8,8 +8,7 @@ defmodule Task do
     Enum.reverse(result)
   end
 
-  defp min3(count, [head_value|tail_values], result) do
-    {value1, value2, value3} = head_value
+  defp min3(count, [{value1, value2, value3}|tail_values], result) do
     value_min = mini3(value1, value2, value3)
     min3(count - 1, tail_values, [value_min|result])
   end

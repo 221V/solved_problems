@@ -7,8 +7,7 @@ min2(Count, Values) ->
 
 min2(_, [], Result) ->
   lists:reverse(Result);
-min2(Count, [ValueHead|ValuesTail], Result) ->
-  {Value1, Value2} = ValueHead,
+min2(Count, [{Value1, Value2}|ValuesTail], Result) ->
   Value3 = case Value1 < Value2 of
     true -> Value1;
     false -> Value2
