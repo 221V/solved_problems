@@ -55,7 +55,11 @@ parse_urls1(Data) ->
 parse_urls2(Content) -> parse_urls2( unicode:characters_to_list([Content], utf8), 0, []).
 
 %parse_urls2(Content, Type, Acc) ->
-parse_urls2([], _, _) -> ok;
+parse_urls2([], _, _) ->
+  ssl:stop(),
+  %inets:stop(),
+  application:stop(inets),
+  ok;
 parse_urls2([60,100,105,118,32,99,108,97,115,115,61,34,114,34,62,60,
   97,32,104,114,101,102,61,34|T], 0, Acc) -> parse_urls2(T, 1, Acc); % "<div class=\"r\"><a href=\""
 parse_urls2([_|T], 0, Acc) -> parse_urls2(T, 0, Acc);
