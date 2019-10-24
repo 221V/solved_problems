@@ -1,6 +1,10 @@
 -module(rs).
 -compile([export_all, nowarn_export_all]).
 
+% read file and write to another one, task from "форум програмістів"
+% https://replace.org.ua/topic/1008/
+
+
 %do(FileName) ->
 do() ->
   %{ok, File} = file:open(FileName, [read]),
